@@ -6,11 +6,17 @@ const AtavarUser = () => {
 
   return (
     <div
-      className={` py-[20px] px-[30px] ${
+      className={`select-none py-[20px] px-[30px] ${
         closedNavbar ? "" : "flex items-center gap-2"
       }`}
     >
-      <Image src="/user-exemplo.png" alt="user avatar" width={35} height={35} />
+      <Image
+        src="/user-exemplo.png"
+        alt="user avatar"
+        width={35}
+        height={35}
+        draggable={false}
+      />
       {!closedNavbar ? (
         <div className="flex flex-col">
           <span className="text-[13px]">Vinicius</span>

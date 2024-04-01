@@ -7,7 +7,9 @@ const ButtonNavbar = () => {
   return (
     <button
       className={`p-2 rounded bg-medium-gray text-xs cursor-pointer transition-all ${
-        closedNavbar ? "absolute top-[-3px] right-[-15px]" : ""
+        closedNavbar
+          ? "absolute top-[50%] translate-y-[-50%] right-[-15px]"
+          : ""
       }`}
       onClick={() => handleClosedNavbar()}
     >

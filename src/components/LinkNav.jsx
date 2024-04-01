@@ -8,13 +8,13 @@ const LinkNav = ({ name, icon, classExtra }) => {
   const [closedNavbar] = useClosedNavbar();
 
   return (
-    <li>
+    <li className={`${classExtra ? classExtra : ""}`}>
       <Link
         className={`flex items-center gap-4 py-5 px-[30px] transition-all capitalize hover:bg-medium-gray relative ${
           pathname === "/" + name
             ? "bg-medium-gray border-l-[3px] border-solid border-light-grey"
             : ""
-        } ${classExtra ? classExtra : ""}`}
+        } `}
         href={`/${name}`}
       >
         <div className="text-[22px]">{icon}</div>

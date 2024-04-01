@@ -5,10 +5,10 @@ import { ClosedNavbarContextProvider } from "@/context/ClosedNavbarContext";
 const PrivateLayout = ({ children }) => {
   return (
     <ClosedNavbarContextProvider>
-      <div className="min-h-screen flex">
+      <div className="min-h-screen">
         <Navbar />
         <main
-          className={`flex-1 p-[30px] transition-all ml-[240px]  max-w-full`}
+          className={`h-[1000px] p-[30px] transition-all ml-[240px]  max-w-full`}
         >
           <Header /> <div>{children}</div>
         </main>
