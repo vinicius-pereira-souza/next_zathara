@@ -15,6 +15,13 @@ module.exports = {
       fontFamily: {
         KaiseiOpti: "'Kaisei Opti', serif",
       },
+      colors: {
+        "dark-grey": "#171818",
+        "light-grey": "#F5F5F5",
+        "medium-gray": "#1F1F1F",
+        "content-navbar-light": "#F3F4F6",
+        "dark-blue": "#111827",
+      },
     },
   },
   plugins: [],
