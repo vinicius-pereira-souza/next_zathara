@@ -7,19 +7,17 @@ export const ThemeContextProvider = ({ children }) => {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
-    const html = document.querySelector("html");
-
     if (localStorage.getItem("theme")) {
       setTheme(localStorage.getItem("theme"));
     } else {
       localStorage.setItem("theme", theme);
       setTheme("light");
     }
+  }, [theme]);
 
-    if (html.classList.contains("null")) {
-      html.classList.remove("null");
-      html.classList.add(theme);
-    }
+  useEffect(() => {
+    const html = document.querySelector("html");
+    html.classList.add(localStorage.getItem("theme"));
   }, [theme]);
 
   const toggleThemeValue = () => {
