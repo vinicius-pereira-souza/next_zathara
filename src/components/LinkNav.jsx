@@ -10,7 +10,7 @@ const LinkNav = ({ name, icon, classExtra }) => {
   return (
     <li className={`${classExtra ? classExtra : ""}`}>
       <Link
-        className={`flex items-center gap-4 py-5 px-[30px] transition-all capitalize hover:bg-medium-gray relative ${
+        className={` flex items-center gap-4 py-5 px-[30px] transition-all capitalize hover:bg-medium-gray relative ${
           pathname === "/" + name
             ? "bg-medium-gray border-l-[3px] border-solid border-light-grey"
             : ""

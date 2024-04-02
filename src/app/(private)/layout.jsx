@@ -8,7 +8,7 @@ const PrivateLayout = ({ children }) => {
       <div className="min-h-screen">
         <Navbar />
         <main
-          className={`h-[1000px] p-[30px] transition-all ml-[240px]  max-w-full`}
+          className={`min-h-screen p-[30px] transition-all ml-[240px]  max-w-full`}
         >
           <Header /> <div>{children}</div>
         </main>
