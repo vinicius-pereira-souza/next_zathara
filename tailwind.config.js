@@ -16,6 +16,7 @@ module.exports = {
         KaiseiOpti: "'Kaisei Opti', serif",
       },
       colors: {
+        themeDarkPage: "#111212",
         "dark-grey": "#171818",
         "light-grey": "#F5F5F5",
         "medium-gray": "#1F1F1F",

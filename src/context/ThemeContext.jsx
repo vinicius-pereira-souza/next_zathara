@@ -23,7 +23,6 @@ export const ThemeContextProvider = ({ children }) => {
       setTheme("light");
       localStorage.setItem("theme", "light");
     }
-    console.log(localStorage.getItem("theme"));
   };
 
   return (
