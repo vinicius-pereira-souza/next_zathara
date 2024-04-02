@@ -7,9 +7,9 @@ const ButtonTheme = () => {
   return (
     <button
       onClick={() => toggleThemeValue()}
-      className="p-2 rounded transition-all hover:bg-slate-300 hover:text-gray-90000 text-lg text-dark-blue cursor-pointer"
+      className="p-2 rounded transition-all  hover:bg-slate-300  hover:text-gray-90000 text-lg text-dark-blue dark:text-light-grey dark:hover:bg-medium-gray cursor-pointer"
     >
-      {theme == "light" ? <LuMoonStar /> : <LuSun />}
+      {theme === "light" ? <LuMoonStar /> : <LuSun />}
     </button>
   );
 };
