@@ -1,13 +1,21 @@
 # Zathara
 
-Zathara é uma aplicação de autenticação simples que utiliza o Firebase como backend. Com Zathara, os usuários podem criar uma conta diretamente na plataforma ou fazer login usando sua conta do Google. Além disso, a aplicação oferece um modo escuro para melhorar a experiência de visualização.
+Zathara é uma aplicação simples de autenticação desenvolvida com o objetivo de aprender a trabalhar com Next.js utilizando a nova estrutura de pastas `app`, juntamente com Firebase Authentication. Além disso, a aplicação integra o Tailwind CSS com suporte para dark mode persistente.
+
+## Tecnologias Utilizadas
+
+- Next.js 14
+- Firebase Authentication
+- Tailwind CSS com Dark Mode
 
 ## Recursos Principais
 
 - **Autenticação Firebase:** Zathara aproveita a poderosa funcionalidade de autenticação fornecida pelo Firebase, permitindo aos usuários criar contas ou fazer login facilmente.
-- **Modo Escuro:** O aplicativo oferece um modo escuro para melhorar a usabilidade durante a noite ou em ambientes de baixa luminosidade.
+- **Modo Escuro:** Tema escuro persistente usando Tailwind CSS e um hook personalizado para Next.js.
 - **Next.js 14:** Desenvolvido com Next.js 14, Zathara oferece uma experiência de desenvolvimento moderna e eficiente.
 - **Tailwind CSS:** O layout e o estilo da aplicação são construídos utilizando o Tailwind CSS, permitindo uma personalização fácil e rápida.
 - **Hooks do React e Context:** Zathara faz uso dos Hooks do React e Context para gerenciar o estado da aplicação de forma eficaz e proporcionar uma experiência de usuário fluida.
 
-em desenvolvimento!
+## Status do Desenvolvimento
+
+Este projeto ainda está em desenvolvimento e pode não conter todas as funcionalidades planejadas!
