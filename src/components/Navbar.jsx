@@ -20,11 +20,11 @@ const Navbar = () => {
   return (
     <aside className="h-screen flex flex-col bg-dark-grey text-content-navbar-light fixed top-0 left-0">
       <div
-        className="w-[30px] h-[30px] rounded-full bg-light-grey absolute top-0 right-[-30px] shadow-dark-grey"
+        className="w-[30px] h-[30px] rounded-full bg-light-grey dark:bg-themeDarkPage absolute top-0 right-[-30px] shadow-dark-grey"
         style={{ boxShadow: "-15px -15px 0 0 #171818" }}
       ></div>
       <div
-        className="w-[30px] h-[30px] rounded-full bg-light-grey absolute bottom-0 right-[-30px] shadow-dark-grey"
+        className="w-[30px] h-[30px] rounded-full bg-light-grey dark:bg-themeDarkPage absolute bottom-0 right-[-30px] shadow-dark-grey"
         style={{ boxShadow: "-15px 15px 0 0 #171818" }}
       ></div>
       <header className="flex items-center p-[30px] text-[12px]  relative">

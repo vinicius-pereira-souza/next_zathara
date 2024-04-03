@@ -5,6 +5,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       backgroundImage: {
@@ -16,6 +17,7 @@ module.exports = {
         KaiseiOpti: "'Kaisei Opti', serif",
       },
       colors: {
+        themeDarkPage: "#111212",
         "dark-grey": "#171818",
         "light-grey": "#F5F5F5",
         "medium-gray": "#1F1F1F",
