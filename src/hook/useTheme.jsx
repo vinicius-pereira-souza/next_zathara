@@ -1,9 +1,7 @@
 "use client";
-import { createContext, useContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const ThemeContext = createContext(null);
-
-export const ThemeContextProvider = ({ children }) => {
+export const useTheme = () => {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
@@ -38,16 +36,6 @@ export const ThemeContextProvider = ({ children }) => {
       html.classList.add("light");
     }
   };
-
-  return (
-    <ThemeContext.Provider value={{ theme, toggleThemeValue }}>
-      {children}
-    </ThemeContext.Provider>
-  );
-};
-
-export const useTheme = () => {
-  const { theme, toggleThemeValue } = useContext(ThemeContext);
 
   return {
     theme,

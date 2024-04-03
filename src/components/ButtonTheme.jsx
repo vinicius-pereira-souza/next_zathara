@@ -1,4 +1,4 @@
-import { useTheme } from "@/context/ThemeContext";
+import { useTheme } from "@/hook/useTheme";
 import { LuSun, LuMoonStar } from "react-icons/lu";
 
 const ButtonTheme = () => {
