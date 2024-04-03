@@ -8,6 +8,15 @@ export const ClosedNavbarContextProvider = ({ children }) => {
 
   const handleClosedNavbar = () => {
     SetClosedNavbar(!closedNavbar);
+    const container = document.querySelector("#container");
+
+    if (closedNavbar) {
+      container.classList.add("ml-[240px]");
+      container.classList.remove("ml-[85px]");
+    } else {
+      container.classList.remove("ml-[240px]");
+      container.classList.add("ml-[85px]");
+    }
   };
 
   return (
