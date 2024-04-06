@@ -6,11 +6,7 @@ const ButtonNavbar = () => {
 
   return (
     <button
-      className={`p-2 rounded bg-medium-gray text-xs cursor-pointer transition-all ${
-        closedNavbar
-          ? "absolute top-[50%] translate-y-[-50%] right-[-15px]"
-          : ""
-      }`}
+      className={`absolute right-[-13px] p-2 rounded-full bg-gray-600  hover:bg-gray-800 text-xs cursor-pointer transition-all`}
       onClick={() => handleClosedNavbar()}
     >
       {!closedNavbar ? <LuArrowLeft /> : <LuArrowRight />}

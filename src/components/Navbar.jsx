@@ -40,15 +40,28 @@ const Navbar = () => {
         } `}
       >
         <ul className="h-full flex flex-col ">
-          <LinkNav name="dashboard" icon={<LuLayoutDashboard />} />
-          <LinkNav name="tasks" icon={<LuClipboardList />} />
-          <LinkNav name="account" icon={<LuUser />} />
           <LinkNav
+            href="dashboard"
+            name="dashboard"
+            icon={<LuLayoutDashboard />}
+          />
+          <LinkNav
+            href="dashboard/tasks"
+            name="tasks"
+            icon={<LuClipboardList />}
+          />
+          <LinkNav href="dashboard/account" name="account" icon={<LuUser />} />
+          <LinkNav
+            href="dashboard/notifications"
             name="notifications"
             classExtra="mt-auto"
             icon={<LuBell />}
           />
-          <LinkNav name="settings" icon={<LuSettings />} />
+          <LinkNav
+            href="dashboard/settings"
+            name="settings"
+            icon={<LuSettings />}
+          />
         </ul>
         <AtavarUser navClosed={closedNavbar} />
         <ButtonLogout icon={<LuLogOut />} navClosed={closedNavbar} />
