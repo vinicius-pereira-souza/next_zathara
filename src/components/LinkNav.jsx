@@ -3,7 +3,7 @@ import { useClosedNavbar } from "@/context/ClosedNavbarContext";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const LinkNav = ({ name, icon, classExtra }) => {
+const LinkNav = ({ name, icon, classExtra, href }) => {
   const pathname = usePathname();
   const [closedNavbar] = useClosedNavbar();
 
@@ -15,7 +15,7 @@ const LinkNav = ({ name, icon, classExtra }) => {
             ? "bg-medium-gray border-l-[3px] border-solid border-light-grey"
             : ""
         } `}
-        href={`/${name}`}
+        href={`/${href}`}
       >
         <div className="text-[22px]">{icon}</div>
         {!closedNavbar ? <div className="text-[14px]">{name}</div> : ""}

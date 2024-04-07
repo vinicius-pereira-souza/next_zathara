@@ -1,14 +1,19 @@
-import React from "react";
-
-const Input = ({ type, icon, placeholder, value, setValue }) => {
+const Input = ({ type, name, text, placeholder }) => {
   return (
-    <div>
-      <span>{icon}</span>
+    <div className="mb-4 flex flex-col mt-[18px]">
+      <label
+        className="text-[15px] text-gray-320 mb-2  font-semibold"
+        htmlFor={name}
+      >
+        {text}
+      </label>
       <input
+        className="w-full px-5 py-4 rounded"
         type={type}
+        name={name}
+        id={name}
         placeholder={placeholder}
-        onChange={(e) => setValue(e.target.value)}
-        value={value}
+        required
       />
     </div>
   );
