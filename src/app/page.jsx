@@ -4,6 +4,7 @@ import ButtonSumit from "@/components/ButtonSumit";
 import Input from "@/components/Input";
 import { useState } from "react";
 
+let srcRandomImage = "https://source.unsplash.com/random";
 export default function Home() {
   const [page, setPage] = useState("login");
 
@@ -19,7 +20,7 @@ export default function Home() {
     <main className="min-h-screen bg-white-200 flex items-center justify-center">
       <div className="flex-1 min-h-screen">
         <Image
-          src="https://source.unsplash.com/random"
+          src={srcRandomImage}
           alt="page account image"
           width={500}
           height={500}
@@ -60,7 +61,7 @@ export default function Home() {
               onClick={handlePageState}
               className="text-blue-550 font-semibold underline decoration-2"
             >
-              Create an account
+              {page === "login" ? "Create an account" : "Sign in"}
             </button>
           </span>
           <div className="flex items-center my-[18px] text-white-145 font-semibold">
