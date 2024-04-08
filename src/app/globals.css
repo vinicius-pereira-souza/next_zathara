@@ -4,6 +4,6 @@
 
 @layer components {
   .googleButton {
-    @apply transition-all bg-white hover:bg-blue-550 text-gray-550 hover:text-white-200 font-semibold flex items-center w-full py-[14px] px-9 text-center shadow-md rounded;
+    @apply transition-all bg-white hover:bg-blue-550 text-gray-550 hover:text-white-200 font-semibold flex items-center w-full py-[14px] px-9 text-center shadow-md rounded mt-[16px];
   }
 }
