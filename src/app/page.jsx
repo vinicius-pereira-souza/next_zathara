@@ -8,12 +8,24 @@ let srcRandomImage = "https://source.unsplash.com/random";
 export default function Home() {
   const [page, setPage] = useState("login");
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setconfirmPassword] = useState("");
+
   const handlePageState = () => {
     if (page === "login") {
       setPage("register");
     } else {
       setPage("login");
     }
+
+    setEmail("");
+    setPassword("");
+    setconfirmPassword("");
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
   };
 
   return (
@@ -22,8 +34,8 @@ export default function Home() {
         <Image
           src={srcRandomImage}
           alt="page account image"
-          width={500}
-          height={500}
+          width={1000}
+          height={1000}
           className="w-full h-screen object-cover"
         />
       </div>
@@ -31,15 +43,17 @@ export default function Home() {
         <h1 className="text-[32px] font-semibold text-gray-550">
           {page === "login" ? "Login" : "Create Account"}
         </h1>
-        <div className="w-[50px] h-[3px] bg-gray-550 mt-2"></div>
+        <div className="w-[50px] h-[3px] bg-gray-550 "></div>
 
-        <form>
+        <form onSubmit={handleFormSubmit}>
           <Input
             type="email"
             name="email"
             id="email"
             text="E-mail"
             placeholder="example@example.com"
+            state={email}
+            setState={setEmail}
           />
           <Input
             type="password"
@@ -47,7 +61,22 @@ export default function Home() {
             id="password"
             text="Password"
             placeholder="Enter Your Password"
+            state={password}
+            setState={setPassword}
           />
+          {page !== "login" ? (
+            <Input
+              type="password"
+              name="password"
+              id="password"
+              text="Confirm Password"
+              placeholder="Confirm Password"
+              state={confirmPassword}
+              setState={setconfirmPassword}
+            />
+          ) : (
+            ""
+          )}
           {page === "login" ? (
             <ButtonSumit text="Login" />
           ) : (
@@ -64,11 +93,6 @@ export default function Home() {
               {page === "login" ? "Create an account" : "Sign in"}
             </button>
           </span>
-          <div className="flex items-center my-[18px] text-white-145 font-semibold">
-            <span className="flex-1 h-[3px]  bg-white-145"></span>
-            <span className="mx-10">or</span>
-            <span className="flex-1 h-[3px]  bg-white-145"></span>
-          </div>
           <button className="googleButton">
             <Image
               src="/google-icon.png"
