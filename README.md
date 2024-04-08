@@ -16,6 +16,10 @@ Zathara é uma aplicação simples de autenticação desenvolvida com o objetivo
 - **Tailwind CSS:** O layout e o estilo da aplicação são construídos utilizando o Tailwind CSS, permitindo uma personalização fácil e rápida.
 - **Hooks do React e Context:** Zathara faz uso dos Hooks do React e Context para gerenciar o estado da aplicação de forma eficaz e proporcionar uma experiência de usuário fluida.
 
+## Aviso sobre as imagens
+
+As imagens utilizadas neste projeto foram obtidas do Unsplash, uma plataforma de compartilhamento de imagens de alta qualidade, licenciadas gratuitamente para uso comercial e não comercial. Cada imagem utilizada é creditada e acompanhada por um link direto para o respectivo autor no Unsplash. Agradecemos aos talentosos fotógrafos que contribuem para a comunidade do Unsplash.
+
 ## Status do Desenvolvimento
 
 Este projeto ainda está em desenvolvimento e pode não conter todas as funcionalidades planejadas!
