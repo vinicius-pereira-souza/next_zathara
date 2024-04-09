@@ -1,3 +1,4 @@
+import { db } from "@/firebase/config";
 import { useState } from "react";
 import {
   getAuth,
@@ -33,7 +34,7 @@ export default function useAuthentication() {
       );
 
       setIsLoading(false);
-      return user;
+      return;
     } catch (error) {
       const errorMessage = getErrorMessage(error);
       setError(errorMessage);
@@ -41,10 +42,35 @@ export default function useAuthentication() {
     }
   };
 
+  const loginUser = async (data) => {
+    setIsLoading(true);
+
+    try {
+      const { user } = await signInWithEmailAndPassword(
+        auth,
+        data.email,
+        data.password,
+      );
+
+      setIsLoading(false);
+      return;
+    } catch (error) {
+      const errorMessage = getErrorMessage(error);
+      setError(errorMessage);
+      setIsLoading(false);
+    }
+  };
+
+  const logoutUser = () => {
+    signOut(auth);
+  };
+
   return {
-    auth,
-    createUser,
     isLoading,
     isError,
+    auth,
+    createUser,
+    loginUser,
+    logoutUser,
   };
 }
