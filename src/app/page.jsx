@@ -6,7 +6,7 @@ import { useState } from "react";
 import useAuthentication from "@/hook/useAuthentication";
 
 export default function Home() {
-  const { createUser, isLoading, isError } = useAuthentication();
+  const { createUser, loginUser, isLoading, isError } = useAuthentication();
   const [page, setPage] = useState("login");
 
   const [email, setEmail] = useState("");
@@ -28,7 +28,7 @@ export default function Home() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (page === "login") {
-      console.log("login");
+      await loginUser({ email, password });
     } else if (page === "register") {
       if (password === confirmPassword) {
         await createUser({ email, password });
@@ -38,7 +38,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white-200 flex items-center justify-center">
-      <div className="flex-1 min-h-screen">
+      <div className="flex-1 min-h-screen ">
         <Image
           src="https://source.unsplash.com/random"
           alt="page account image"

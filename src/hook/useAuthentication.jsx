@@ -27,15 +27,12 @@ export default function useAuthentication() {
     setIsLoading(true);
 
     try {
-      const { user } = await createUserWithEmailAndPassword(
-        auth,
-        data.email,
-        data.password,
-      );
+      await createUserWithEmailAndPassword(auth, data.email, data.password);
 
       setIsLoading(false);
       return;
     } catch (error) {
+      console.log(error);
       const errorMessage = getErrorMessage(error);
       setError(errorMessage);
       setIsLoading(false);
@@ -46,15 +43,12 @@ export default function useAuthentication() {
     setIsLoading(true);
 
     try {
-      const { user } = await signInWithEmailAndPassword(
-        auth,
-        data.email,
-        data.password,
-      );
+      await signInWithEmailAndPassword(auth, data.email, data.password);
 
       setIsLoading(false);
       return;
     } catch (error) {
+      console.log(error);
       const errorMessage = getErrorMessage(error);
       setError(errorMessage);
       setIsLoading(false);
