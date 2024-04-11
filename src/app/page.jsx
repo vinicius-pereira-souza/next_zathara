@@ -3,9 +3,11 @@ import Image from "next/image";
 import ButtonSumit from "@/components/ButtonSumit";
 import Input from "@/components/Input";
 import { useState } from "react";
+import useAuthentication from "@/hook/useAuthentication";
 
-let srcRandomImage = "https://source.unsplash.com/random";
 export default function Home() {
+  const { createUser, loginUser, signInWithGoogle, isLoading, isError } =
+    useAuthentication();
   const [page, setPage] = useState("login");
 
   const [email, setEmail] = useState("");
@@ -24,18 +26,31 @@ export default function Home() {
     setconfirmPassword("");
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
+    if (page === "login") {
+      await loginUser({ email, password });
+    } else if (page === "register") {
+      if (password === confirmPassword) {
+        await createUser({ email, password });
+      }
+    }
+  };
+
+  const signInGoogle = async () => {
+    await signInWithGoogle();
+    return;
   };
 
   return (
     <main className="min-h-screen bg-white-200 flex items-center justify-center">
-      <div className="flex-1 min-h-screen">
+      <div className="flex-1 min-h-screen ">
         <Image
-          src={srcRandomImage}
+          src="https://source.unsplash.com/random"
           alt="page account image"
           width={1000}
           height={1000}
+          loading="lazy"
           className="w-full h-screen object-cover"
         />
       </div>
@@ -78,9 +93,18 @@ export default function Home() {
             ""
           )}
           {page === "login" ? (
-            <ButtonSumit text="Login" />
+            <ButtonSumit text={isLoading ? "Loading..." : "Login"} />
           ) : (
-            <ButtonSumit text="Create an account" />
+            <ButtonSumit
+              text={isLoading ? "Loading..." : "Create an account"}
+            />
+          )}
+          {isError ? (
+            <span className="block text-center text-[14px] text-red-500 mt-2">
+              {isError}
+            </span>
+          ) : (
+            ""
           )}
         </form>
         <div>
@@ -93,7 +117,7 @@ export default function Home() {
               {page === "login" ? "Create an account" : "Sign in"}
             </button>
           </span>
-          <button className="googleButton">
+          <button onClick={signInGoogle} className="googleButton">
             <Image
               src="/google-icon.png"
               alt="google icon"
