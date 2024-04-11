@@ -6,7 +6,8 @@ import { useState } from "react";
 import useAuthentication from "@/hook/useAuthentication";
 
 export default function Home() {
-  const { createUser, loginUser, isLoading, isError } = useAuthentication();
+  const { createUser, loginUser, signInWithGoogle, isLoading, isError } =
+    useAuthentication();
   const [page, setPage] = useState("login");
 
   const [email, setEmail] = useState("");
@@ -34,6 +35,11 @@ export default function Home() {
         await createUser({ email, password });
       }
     }
+  };
+
+  const signInGoogle = async () => {
+    await signInWithGoogle();
+    return;
   };
 
   return (
@@ -111,7 +117,7 @@ export default function Home() {
               {page === "login" ? "Create an account" : "Sign in"}
             </button>
           </span>
-          <button className="googleButton">
+          <button onClick={signInGoogle} className="googleButton">
             <Image
               src="/google-icon.png"
               alt="google icon"

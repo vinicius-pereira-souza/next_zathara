@@ -4,6 +4,8 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
   signOut,
 } from "firebase/auth";
 
@@ -12,6 +14,7 @@ export default function useAuthentication() {
   const [isError, setError] = useState("");
 
   const auth = getAuth();
+  const provider = new GoogleAuthProvider();
 
   function getErrorMessage(error) {
     if (error.code === "auth/weak-password") {
@@ -55,6 +58,29 @@ export default function useAuthentication() {
     }
   };
 
+  const signInWithGoogle = async () => {
+    setIsLoading(true);
+
+    try {
+      await signInWithPopup(auth, provider).then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+
+        const user = result.user;
+      });
+
+      setIsLoading(false);
+      return;
+    } catch (error) {
+      console.log(error);
+      const errorMessage = getErrorMessage(
+        GoogleAuthProvider.credentialFromError(error),
+      );
+      setError(errorMessage);
+      setIsLoading(false);
+    }
+  };
+
   const logoutUser = () => {
     signOut(auth);
   };
@@ -65,6 +91,7 @@ export default function useAuthentication() {
     auth,
     createUser,
     loginUser,
+    signInWithGoogle,
     logoutUser,
   };
 }
