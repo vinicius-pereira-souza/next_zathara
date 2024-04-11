@@ -22,4 +22,4 @@ As imagens utilizadas neste projeto foram obtidas do Unsplash, uma plataforma de
 
 ## Status do Desenvolvimento
 
-Este projeto ainda está em desenvolvimento e pode não conter todas as funcionalidades planejadas!
+Este projeto ainda está em desenvolvimento, então pode não contém resposividade!
