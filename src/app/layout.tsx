@@ -1,4 +1,4 @@
-import { poppins } from "@/ui/fonts";
+import { inter } from "@/app/ui/fonts";
 import "./globals.css";
 
 export const metadata = {
@@ -13,9 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.className}relative min-h-screen bg-light-grey`}
-      >
+      <body className={`${inter.className} relative min-h-screen bg-gray-50`}>
         {children}
       </body>
     </html>

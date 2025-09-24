@@ -1,6 +1,6 @@
 export default function Page() {
   return (
-    <div>
+    <div className="w-full max-w-[479px]">
       <h1>Register</h1>
     </div>
   );
