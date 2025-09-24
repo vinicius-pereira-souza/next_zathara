@@ -2,7 +2,7 @@ import { inter } from "@/app/ui/fonts";
 import "./globals.css";
 
 export const metadata = {
-  title: "Next Admin",
+  title: "Zathara",
   description: "Authentication Application",
 };
 
