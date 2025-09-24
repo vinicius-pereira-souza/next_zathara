@@ -1,4 +1,4 @@
-const Tasks = () => {
+export default function Notifications () {
   return (
     <div>
       <h1>Content</h1>
@@ -6,4 +6,4 @@ const Tasks = () => {
   );
 };
 
-export default Tasks;
+

@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import { ClosedNavbarContextProvider } from "@/context/ClosedNavbarContext";
 
-const DashboardLayout = ({ children }) => {
+const PrivateLayout = ({ children }) => {
   return (
     <ClosedNavbarContextProvider>
       <div className="min-h-screen bg-light-grey dark:bg-themeDarkPage dark:text-light-grey">
@@ -18,4 +18,4 @@ const DashboardLayout = ({ children }) => {
   );
 };
 
-export default DashboardLayout;
+export default PrivateLayout;
