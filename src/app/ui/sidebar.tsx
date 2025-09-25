@@ -4,9 +4,9 @@ import { LuLogOut } from "react-icons/lu";
 
 export default function Sidebar() {
   return (
-    <aside className="min-h-screen fixed top-0 left-0 bg-white px-4 pt-6 w-[250px] flex flex-col shadow">
-      <div className="flex items-center gap-3 text-xl font-extrabold uppercase text-gray-900 mb-8">
-        <Image src="/icon-logo.svg" alt="icon Logo" width={42} height={42} />
+    <aside className="min-h-screen fixed top-0 left-0 bg-white px-4 pt-3 w-[250px] flex flex-col shadow">
+      <div className="flex items-center gap-3 text-lg font-extrabold uppercase text-gray-900 mb-8">
+        <Image src="/icon-logo.svg" alt="icon Logo" width={35} height={35} />
         <span>zathara</span>
       </div>
       <nav className="flex-1 flex flex-col">

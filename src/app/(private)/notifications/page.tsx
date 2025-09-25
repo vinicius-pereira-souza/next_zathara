@@ -1,9 +1,9 @@
-export default function Notifications () {
+import Title from "@/app/ui/title";
+
+export default function Notifications() {
   return (
     <div>
-      <h1>Content</h1>
+      <Title text="Notifications" />
     </div>
   );
-};
-
-
+}

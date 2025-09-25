@@ -1,7 +1,9 @@
+import Title from "@/app/ui/title";
+
 export default function Account() {
   return (
     <div>
-      <h1>Content</h1>
+      <Title text="Account" />
     </div>
   );
 }
