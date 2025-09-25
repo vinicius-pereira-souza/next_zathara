@@ -6,7 +6,6 @@ import {
   LuCircleCheckBig,
   LuUser,
   LuSettings,
-  LuLogOut,
 } from "react-icons/lu";
 import clsx from "clsx";
 
@@ -51,9 +50,9 @@ export function NavLink({ text, icon, href, classList }: Partial<TypeNavLink>) {
       <li
         className={clsx(
           classList,
-          "flex items-center gap-3 px-4 rounded-lg text-sm mb-2",
+          "flex items-center gap-3 px-4 rounded-lg text-sm mb-2 hover:bg-blue-50 transition-all",
           pathname === href
-            ? "bg-blue-500 text-white font-bold"
+            ? "bg-blue-500 hover:bg-blue-500 text-white font-bold"
             : "text-gray-500",
         )}
       >
