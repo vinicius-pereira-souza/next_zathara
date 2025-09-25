@@ -13,6 +13,7 @@ export default async function Banner() {
           width={1080}
           height={720}
           className="object-cover min-h-screen w-full flex-1"
+          blurDataURL={photo.urls.small}
           placeholder="blur"
         />
       ) : (
