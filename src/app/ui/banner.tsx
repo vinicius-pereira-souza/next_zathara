@@ -13,6 +13,7 @@ export default async function Banner() {
           width={1080}
           height={720}
           className="object-cover min-h-screen w-full flex-1"
+          placeholder="blur"
         />
       ) : (
         <div className="min-h-screen w-full flex-1 flex items-center justify-center bg-blue-500 text-white font-bold">

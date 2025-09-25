@@ -1,20 +1,16 @@
-import Header from "@/components/Header";
-import Navbar from "@/components/Navbar";
-import { ClosedNavbarContextProvider } from "@/context/ClosedNavbarContext";
+import Sidebar from "../ui/sidebar";
 
-const PrivateLayout = ({ children }) => {
+const PrivateLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <ClosedNavbarContextProvider>
-      <div className="min-h-screen bg-light-grey dark:bg-themeDarkPage dark:text-light-grey">
-        <Navbar />
-        <main
-          id="container"
-          className={`min-h-screen p-[30px] transition-all ml-[240px]  max-w-full`}
-        >
-          <Header /> <div>{children}</div>
-        </main>
+    <div>
+      <div className="min-h-screen relative">
+        <Sidebar />
+        <div>
+          <header>header</header>
+          <main>{children}</main>
+        </div>
       </div>
-    </ClosedNavbarContextProvider>
+    </div>
   );
 };
 
