@@ -29,7 +29,7 @@ export default function NavList() {
   return (
     <ul className="flex-1 flex flex-col">
       {links.map(({ text, icon, href }: Partial<TypeNavLink>) => (
-        <NavLink text={text} icon={icon} href={href} />
+        <NavLink key={href} text={text} icon={icon} href={href} />
       ))}
 
       <NavLink
